@@ -1,0 +1,35 @@
+.
+├── Dockerfile
+├── README.md
+├── __init__.py
+├── consumers
+│   └── data_consumer.py
+├── datasets
+│   ├── __init__.py
+│   ├── data_files
+│   │   ├── co2.csv
+│   │   ├── humidity.csv
+│   │   ├── particulate_matter.csv
+│   │   └── temperature.csv
+│   └── generators
+│       ├── CarbonDioxideDataGenerator.py
+│       ├── DataGenerator.py
+│       ├── GenerateDatasets.py
+│       ├── HumidityDataGenerator.py
+│       ├── ParticulateMatterDataGenerator.py
+│       ├── TemperatureDataGenerator.py
+│       └── __init__.py
+├── directory_structure.txt
+├── make_filestructures_diagram.sh
+├── processing
+│   └── data_processor.py
+├── producers
+│   ├── co2_producer.py
+│   ├── humidity_producer.py
+│   ├── particulate_matter_producer.py
+│   └── temperature_producer.py
+├── requirements.txt
+└── visualizations
+    └── dashboard.py
+
+8 directories, 25 files
