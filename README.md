@@ -26,7 +26,9 @@ The other classes inherit from this base class. An example is `TemperatureDataGe
 Eventually this data will be replaced with actual sensor data. 
 
 ### Data Ingestion
-The data is ingested using kafka producers and consumers. There is a producer for each sensor type, such as `temperature_producer.py`. Each producer streams data to it's own topic. Then there is a single consumer which reads data from all of the topics.
+The data is ingested using kafka producers and consumers. There is a producer for each sensor type, such as `TemperatureProducer.py`. Each producer streams data to it's own topic. The producers can be run concurrently using the `KafkaProducerRunner.py` class. 
+
+Then there is a single consumer which reads data from all of the topics.
 
 Having multiple producers stream data to multiple topics allows for a more flexible and scalable data pipeline. The producers can be deployed on separate machines or in separate parts of the same system, and each producer can be responsible for producing data for a specific topic.
 
@@ -41,16 +43,16 @@ virtualenv venv
 source venv/bin/activate
 ```
 
-2. In a terminal run the following command from the producers directory to start the streaming (using temperature as an example)
+1. In a terminal run the following command from the producers directory to start the streaming
 
 ```
-python temperature_producer.py
+python KafkaProducerRunner.py
 ```
 
-3. Run the following command from the consumers directory to start consuming the data from the `temperature-demo` topic (using temperature as an example)
+1. Run the following command from the consumers directory to start consuming the data from the topics 
 
 ```
-python data_consumer.py
+python DataConsumer.py
 ```
 
 4. After running these commands you should see something like:
@@ -63,5 +65,5 @@ That tells you that the stream is working correctly.
 * Steps 3-7 need to be completed
 * Replace dummy data with actual sensor data
 * Testing
-* Introduce inheritance in the producer classes to reduce redundant code 
-* update the consumer to consume data from all of the producers instead of just one
+* Introduce inheritance in the producer classes to reduce redundant code? Also consider just making util classes which perform things like message serialization, or reading from the csv
+* Add error handling and logging
