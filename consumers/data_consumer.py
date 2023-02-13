@@ -1,8 +1,6 @@
 '''
 Currently a demo consumer which reads from the temperature-demo topic and prints some information as 
 the data is read in from the producer. Just showing proof of concept at this point. 
-
-TODO: consume other data
 '''
 
 from kafka import KafkaConsumer

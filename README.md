@@ -63,3 +63,5 @@ That tells you that the stream is working correctly.
 * Steps 3-7 need to be completed
 * Replace dummy data with actual sensor data
 * Testing
+* Introduce inheritance in the producer classes to reduce redundant code 
+* update the consumer to consume data from all of the producers instead of just one
